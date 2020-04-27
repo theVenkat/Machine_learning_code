@@ -1,0 +1,44 @@
+from random import uniform
+
+A = []
+Z = int(input("How many numbers do you want in the list?: "))
+
+for number in range(0,Z):
+    user = float(input(f"Enter the Number {number+1} Value: " ))
+    A.append(user)
+
+print("Entered List is:", A)
+
+sum_total = 0
+normalised = []
+normalised_total = 0
+for addition in A:
+    sum_total += addition
+for i in A:
+    sum = float(i/sum_total)
+    normalised.append(sum)
+    normalised_total += sum
+print("Normalised Values: ", normalised)
+print("Normalised Values must lie in 0-1, resultant value is:", normalised_total)
+
+cum_list =  normalised
+tilda =[]
+value_count = 0
+for j in cum_list:
+    #print(j)
+    value_count += j
+    tilda.append(value_count)
+print("Cum-sum Values are: ", tilda)
+
+r = uniform(0.0,1.0)
+print(r)
+
+
+#Step 3, Proportional Sampling
+
+proportinal_list = []
+for i in range(0,len(tilda)):
+    if r <= tilda[i]:
+        proportinal_list.append(tilda[i])
+print(f"Proportional Sampling with {r} value are:")
+print(proportinal_list)
