@@ -39,6 +39,6 @@ print(r)
 proportinal_list = []
 for i in range(0,len(tilda)):
     if r <= tilda[i]:
-        proportinal_list.append(tilda[i])
+        proportinal_list.append(A[i])
 print(f"Proportional Sampling with {r} value are:")
 print(proportinal_list)
